@@ -6,12 +6,9 @@ using System.Net.Http;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.AspNetCore.TestHost;
 using Microsoft.Extensions.DependencyInjection;
 using TennisBookings.Merchandise.Api.Data;
-using TennisBookings.Merchandise.Api.Data.Dto;
-using TennisBookings.Merchandise.Api.External.Database;
 using TennisBookings.Merchandise.Api.External.Queue;
 using TennisBookings.Merchandise.Api.IntegrationTests.Fakes;
 using TennisBookings.Merchandise.Api.IntegrationTests.Models;
@@ -252,7 +249,7 @@ namespace TennisBookings.Merchandise.Api.IntegrationTests.Controllers
                     {
                         Assert.Equal("Price", kvp.Key);
                         var error = Assert.Single(kvp.Value);
-                        Assert.Equal("The field Price must be between 0.01 and 10000.", error);
+                        Assert.Equal("The field Price must be between 0,01 and 10000.", error);
                     })
                 },
 
@@ -263,7 +260,7 @@ namespace TennisBookings.Merchandise.Api.IntegrationTests.Controllers
                     {
                         Assert.Equal("Price", kvp.Key);
                         var error = Assert.Single(kvp.Value);
-                        Assert.Equal("The field Price must be between 0.01 and 10000.", error);
+                        Assert.Equal("The field Price must be between 0,01 and 10000.", error);
                     })
                 },
 
@@ -274,7 +271,7 @@ namespace TennisBookings.Merchandise.Api.IntegrationTests.Controllers
                     {
                         Assert.Equal("Price", kvp.Key);
                         var error = Assert.Single(kvp.Value);
-                        Assert.Equal("The field Price must be between 0.01 and 10000.", error);
+                        Assert.Equal("The field Price must be between 0,01 and 10000.", error);
                     })
                 },
 
